@@ -1,22 +1,34 @@
+/*******************************************************************************
+*        This project multiplies two integers using repeated addition        *
+*                      Author: Isaac dos Santos Barbosa                     *
+*                        Date: April 15, 2025                                *
+*******************************************************************************/
+
 #include <stdio.h>
 
-void main(void) {
+int main(void) // main should return int
+{
     int a, b, resultado = 0;
 
-    // Entrada dos números
-    printf("Digite dois números inteiros maiores que 1: ");
+    // Ask the user for two integers greater than 1
+    printf("Enter two integers greater than 1: ");
+    fflush(stdout);
     scanf("%d %d", &a, &b);
 
-    // Validação
+    // Validate input
     if (a <= 1 || b <= 1) {
-        printf("Erro: os números devem ser maiores que 1.\n");
+        printf("Error: both numbers must be greater than 1.\n");
+        return 1; // Exit the program with error
     }
 
-    // Multiplicação via soma
+    // Multiplication via repeated addition
     while (b > 0) {
-        resultado += a; // soma 'a' no resultado
-        b--;            // decrementa b
+        resultado += a; // Add 'a' to the result
+        b--;            // Decrement b
     }
-    printf("Resultado da multiplicacao: %d\n", resultado);
 
+    // Display the result
+    printf("Result of multiplication: %d\n", resultado);
+
+    return 0; // Return 0 to indicate successful execution
 }
