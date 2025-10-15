@@ -1,26 +1,36 @@
-//PROJETO DE CALCULO DE MÉDIA by Thiago e Isaac
+/*******************************************************************************
+*        This project calculates the average of four grades and evaluates   *
+*                      Authors: Thiago and Isaac                             *
+*                        Date: April 15, 2025                                *
+*******************************************************************************/
 
 #include <stdio.h>
 
-void main (void) {
-	float nota1, nota2, nota3, nota4, media; //aqui definimos as variaveis
+int main(void) // main should return int
+{
+    float nota1, nota2, nota3, nota4, media; // Define the variables
 
-	printf("Digite as Notas: "); //aqui perguntamos a temperatura em celsius
-	scanf("%f %f %f %f", &nota1, &nota2, &nota3, &nota4); //aqui perguntamos a temperatura em celsius
+    // Ask the user for four grades
+    printf("Enter the four grades: ");
+    fflush(stdout);
+    scanf("%f %f %f %f", &nota1, &nota2, &nota3, &nota4);
 
-	media = (nota1 + nota2 + nota3 + nota4) / 4; //aqui perguntamos a temperatura em celsius
+    // Calculate the average
+    media = (nota1 + nota2 + nota3 + nota4) / 4;
 
-	printf("Sua média é de: %.1f\n", media); //aqui perguntamos a temperatura em celsius
+    // Display the average
+    printf("Your average is: %.1f\n", media);
 
-	if (media >= 9) { //aqui adicionamos uma condição de se caso for 9 ou maior ele será! aprova dop excelencia
-		printf("APROVADO COM EXCELENCIA");
-	}
-	else if (media >= 6) { //aqui adicionamos uma condição de se caso for 6 ou maior ele será! aprovado
-		printf("APROVADO");
-	}
-	else { //aqui adicionamos uma condição de se caso for menor que 6 ele será! reprovado
-		printf("REPROVADO");
+    // Evaluate the result
+    if (media >= 9) { // Average 9 or higher: excellence
+        printf("APPROVED WITH EXCELLENCE\n");
+    }
+    else if (media >= 6) { // Average 6 or higher: approved
+        printf("APPROVED\n");
+    }
+    else { // Average below 6: failed
+        printf("FAILED\n");
+    }
 
-	}
-
+    return 0; // Return 0 to indicate successful execution
 }
