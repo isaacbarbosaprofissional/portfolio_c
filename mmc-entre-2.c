@@ -1,24 +1,33 @@
-/*Programa em C para encontrar o MMC de dois numeros*/
-//By Isaac Barbosa
+/*******************************************************************************
+*       This project calculates the LCM (Least Common Multiple) of two numbers *
+*                      Author: Isaac dos Santos Barbosa                        *
+*                        Date: April 15, 2025                                  *
+*******************************************************************************/
+
 #include <stdio.h>
+
 int main()
 {
-	int n1, n2, max;
-	printf("Digite dois inteiros positivos: ");
-	scanf("%d %d", &n1, &n2);
+    int n1, n2, max;
 
-// numero maximo
-	max = (n1>n2) ? n1 : n2;
+    // Ask the user for two positive integers
+    printf("Enter two positive integers: ");
+    fflush(stdout);
+    scanf("%d %d", &n1, &n2);
 
-// Sempre verdadeiro
-	while(1)
-	{
-		if( max%n1==0 && max%n2==0 ) // verifica se max C) perfeitamente divisiel ou nao
-		{
-			printf("O MMC de dois numeros C): %d",max);
-			break;
-		}
-		++max;
-	}
-	return 0;
+    // Determine the starting point (the maximum of the two numbers)
+    max = (n1 > n2) ? n1 : n2;
+
+    // Infinite loop until LCM is found
+    while(1)
+    {
+        if(max % n1 == 0 && max % n2 == 0) // Check if max is divisible by both numbers
+        {
+            printf("The LCM of the two numbers is: %d\n", max);
+            break;
+        }
+        ++max; // Increment max and check again
+    }
+
+    return 0; // Return 0 to indicate successful execution
 }
