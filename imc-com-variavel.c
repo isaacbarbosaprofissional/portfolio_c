@@ -1,50 +1,63 @@
-//Projeto de calcular imc by Isaac, Lucas, Thiago e Thomas
+/*******************************************************************************
+*        This project calculates BMI (Body Mass Index) and classifies it      *
+*                      Authors: Isaac, Lucas, Thiago, Thomas                  *
+*                        Date: April 15, 2025                                 *
+*******************************************************************************/
 
 #include <stdio.h>
-    float imc(float A, float B) //aqui definimos as variaveis
+
+// Function to calculate BMI
+float imc(float weight, float height)
 {
-	return A/(B*B);//aqui retorna o que tem que fazer
+    return weight / (height * height); // BMI formula
 }
 
-void main (void)
+int main(void) // main should return int
 {
-	float altura1, massa1, imc_res; //aqui definimos as variaveis
+    float altura1, massa1, imc_res; // Variables for height, weight, and BMI
 
-	printf("Digite a sua altura em metros: "); //aqui perguntamos a altura da pessoa
-	scanf("%f", &altura1); //aqui é recebida a informação da altura pelo usuário
-		
-	printf("Digite a seu peso em kilogramas: "); //aqui perguntamos a peso da pessoa
-	scanf("%f", &massa1); //aqui é recebida a informação da peso pelo usuário
-	
+    // Ask user for height
+    printf("Enter your height in meters: ");
+    fflush(stdout);
+    scanf("%f", &altura1);
 
-	imc_res = imc(massa1, altura1); //aqui fazemos a conta de de mutiplicação
+    // Ask user for weight
+    printf("Enter your weight in kilograms: ");
+    fflush(stdout);
+    scanf("%f", &massa1);
 
-	printf("Seu IMC é de: %.2f KG/m^2 \n", imc_res); //aqui mostramos o resultado
-    
-        if (imc_res<18.5)
-	{
-		printf("Sua classificação é Magreza \n"); //aqui mostramos a classificação do IMC do usuário
-		printf("e sua obesidade é de grau 0\n"); //aqui mostramos o grau da obesidade
-	}
-	if (18.5<=imc_res && imc_res<24.9)
-	{
-		printf("Sua classificação é Normal \n"); //aqui mostramos a classificação do IMC do usuário
-		printf("e sua obesidade é de grau 0\n"); //aqui mostramos o grau da obesidade
-	}
-	if (25<=imc_res && imc_res<29.9)
-	{
-		printf("Sua classificação é Sobrepeso \n"); //aqui mostramos a classificação do IMC do usuário
-		printf("e sua obesidade é de grau I\n"); //aqui mostramos o grau da obesidade
-	}
-	if (30<=imc_res && imc_res<39.9)
-	{
-		printf("Sua classificação é Obesidade \n"); //aqui mostramos a classificação do IMC do usuário
-		printf("e sua obesidade é de grau II\n"); //aqui mostramos o grau da obesidade
-	}
-	if (imc_res>40)
-	{
-		printf("Sua classificação é Obesidade Grave \n"); //aqui mostramos a classificação do IMC do usuário
-		printf("e sua obesidade é de grau III\n"); //aqui mostramos o grau da obesidade
-	}
+    // Calculate BMI
+    imc_res = imc(massa1, altura1);
 
+    // Display BMI
+    printf("Your BMI is: %.2f kg/m^2\n", imc_res);
+
+    // Classify BMI
+    if (imc_res < 18.5)
+    {
+        printf("Classification: Underweight\n");
+        printf("Obesity grade: 0\n");
+    }
+    else if (imc_res < 24.9)
+    {
+        printf("Classification: Normal\n");
+        printf("Obesity grade: 0\n");
+    }
+    else if (imc_res < 29.9)
+    {
+        printf("Classification: Overweight\n");
+        printf("Obesity grade: I\n");
+    }
+    else if (imc_res < 39.9)
+    {
+        printf("Classification: Obesity\n");
+        printf("Obesity grade: II\n");
+    }
+    else
+    {
+        printf("Classification: Severe Obesity\n");
+        printf("Obesity grade: III\n");
+    }
+
+    return 0; // Return 0 to indicate successful execution
 }
