@@ -1,17 +1,28 @@
-//Projeto de calcular media by Arthur e Isaac
+/*******************************************************************************
+*        This project calculates the average of two numbers                 *
+*                      Authors: Arthur and Isaac                             *
+*                        Date: April 15, 2025                                *
+*******************************************************************************/
+
 #include <stdio.h>
-    float media(float A, float B) //aqui definimos as variaveis
+
+// Function to calculate the average of two numbers
+float media(float A, float B)
 {
-	return(A+B)/2;//aqui retorna o que tem que fazer
+    return (A + B) / 2; // Return the average
 }
 
+int main(void) // main should return int
+{
+    float nota1, nota2, MF; // Declare local variables
 
-void main (void) {
-	float nota1, nota2, MF; // Declaracao das variaveis local
+    // Ask the user for the two grades
+    printf("Enter the two grades: ");
+    fflush(stdout);
+    scanf("%f %f", &nota1, &nota2); // Read the grades
 
-  	 printf("Digite as Notas: "); //aqui perguntamos a temperatura em celsius
-  	 scanf("%f %f", &nota1, &nota2); //aqui perguntamos a temperatura em celsius
+    MF = media(nota1, nota2); // Calculate the average
+    printf("Your average is: %.1f\n", MF); // Display the average
 
-	MF = media(nota1, nota2); //media dentro do programa
-     printf("Sua media e de: %.1f\n", MF); //aqui perguntamos a temperatura em celsius 
+    return 0; // Return 0 to indicate successful execution
 }
