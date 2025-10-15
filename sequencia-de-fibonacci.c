@@ -1,22 +1,33 @@
-//CODIGO SEQUENCIA FIBONACCI
+/*******************************************************************************
+*                This project prints a Fibonacci sequence                      *
+*                      Author: Isaac dos Santos Barbosa                        *
+*                           Date: April 15, 2025                               *
+*******************************************************************************/
+
 #include <stdio.h>
 
-void main(void)
+int main(void) // main should return int
 {
-	int resultado; //VARIAVEL DO RESULTADO FINAL
-	int n1 = 0; //VARIAVEL DO DO
-	int n2 = 1; //VARIAVEL DO RESULTADO FINAL
-	int loop; //VARIAVEL DO RESULTADO FINAL
+    int resultado; // Variable to store the current Fibonacci number
+    int n1 = 0;    // Previous Fibonacci number
+    int n2 = 1;    // Current Fibonacci number
+    int loop;      // Number of Fibonacci numbers to generate
 
-	printf("insira o numero de casas de fibonacci desejada:"); //PERGUNTA NA TELA
-	scanf("%d", &loop); //SALVAR VALOR DO USUARIO
+    // Ask the user for the number of Fibonacci terms
+    printf("Enter the number of Fibonacci terms: ");
+    fflush(stdout);
+    scanf("%d", &loop); // Save user input
 
-	while (loop >= 1) //SINTAXE (condiC'C#o)
-	{
-		resultado = n2 + n1;
-		printf("%d ", resultado); //MOSTRAR RESULTADO
-		n2 = n1; //PARA SOMAR VALOR ANTERIOR
-		n1 = resultado; //TODOS IGUAIS PARA SOMA COM ANTERIOR
-		loop = loop - 1; //SE TIVER AINDA, CONTINUA REPETICACAO
-	}
+    // Generate Fibonacci sequence
+    while (loop >= 1)
+    {
+        resultado = n2 + n1; // Calculate next Fibonacci number
+        printf("%d ", resultado); // Display the result
+        n2 = n1;     // Update previous number
+        n1 = resultado; // Update current number
+        loop = loop - 1; // Decrement loop counter
+    }
+
+    printf("\n"); // Move to next line after printing sequence
+    return 0; // Return 0 to indicate successful execution
 }
